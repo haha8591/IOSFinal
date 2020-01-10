@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L6l-SI-w6M">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flickr Feeds-->
+        <scene sceneID="6An-JD-4tZ">
+            <objects>
+                <collectionViewController id="L6l-SI-w6M" customClass="FlickrFeedsCollectionViewController" customModule="finalapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="fXY-hE-d5p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kS2-60-JcF">
+                            <size key="itemSize" width="124" height="258"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="FLD-bo-ZmD" customClass="PhotoCollectionViewCell" customModule="finalapp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="124" height="258"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="124" height="258"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ibb-X9-mA9">
+                                            <rect key="frame" x="0.0" y="8" width="124" height="124"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="Ibb-X9-mA9" secondAttribute="height" id="Si4-hO-FDk"/>
+                                            </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="bSz-nJ-ykO" appends="YES" id="m6a-V5-YHz"/>
+                                            </connections>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bei-cA-cv5">
+                                            <rect key="frame" x="18" y="142" width="88" height="98"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ibb-X9-mA9" secondAttribute="trailing" id="54n-8B-AgF"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Bei-cA-cv5" secondAttribute="trailing" constant="10" id="NaK-Qj-yIn"/>
+                                    <constraint firstItem="Bei-cA-cv5" firstAttribute="top" secondItem="Ibb-X9-mA9" secondAttribute="bottom" constant="10" id="VkM-IJ-yx9"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Bei-cA-cv5" secondAttribute="bottom" constant="10" id="bHo-Q6-rOo"/>
+                                    <constraint firstItem="Ibb-X9-mA9" firstAttribute="top" secondItem="FLD-bo-ZmD" secondAttribute="topMargin" id="ho9-ff-ipq"/>
+                                    <constraint firstItem="Ibb-X9-mA9" firstAttribute="leading" secondItem="FLD-bo-ZmD" secondAttribute="leading" id="tTI-vp-oMa"/>
+                                    <constraint firstItem="Bei-cA-cv5" firstAttribute="leading" secondItem="FLD-bo-ZmD" secondAttribute="leadingMargin" constant="10" id="vnR-fJ-SLb"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="photoImageView" destination="Ibb-X9-mA9" id="Heb-xJ-UrM"/>
+                                    <outlet property="titleLabel" destination="Bei-cA-cv5" id="jEH-VW-ubZ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="L6l-SI-w6M" id="2p3-R0-lbo"/>
+                            <outlet property="delegate" destination="L6l-SI-w6M" id="LYR-qm-kd1"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Flickr Feeds" id="KB6-F7-nd0"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ru-Y8-99h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="bSz-nJ-ykO"/>
+            </objects>
+            <point key="canvasLocation" x="2167" y="-203"/>
+        </scene>
+    </scenes>
+</document>
